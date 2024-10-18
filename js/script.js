@@ -8,6 +8,15 @@ const products = [
   { id: 4, name: 'MSI Gaming Laptop', price: 11500, image: '../images/msi.png' },
 ];
 
+// Handle mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+
+
 // Function to add a product to the cart
 function addToCart(productId) {
   const product = products.find(p => p.id === productId);
