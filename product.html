@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product listing page for MR TECHNOLOGIES">
+  <title>Products - My E-commerce Store</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <header class="bg-custom-blue shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-2xl font-bold text-white">MR TECHNOLOGIES</a>
+      <nav class="space-x-4">
+        <a href="index.html" class="text-white hover:text-custom-cyan">Home</a>
+        <a href="product.html" class="text-white hover:text-custom-cyan">Products</a>
+        <a href="cart.html" class="text-white hover:text-custom-cyan relative">
+            Cart
+            <span id="cart-count" class="absolute top-0 right-0 bg-red-600 text-white rounded-full px-1 text-xs"></span>
+        </a>
+        <a href="contact.html" class="text-white hover:text-custom-cyan">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Product Listing -->
+  <main class="flex-grow container mx-auto py-12">
+    <h2 class="text-3xl font-bold mb-8 text-custom-blue">Our Products</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Product 1 -->
+        <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <img src="images/asus.png" alt="Product 1" class="w-full h-48 object-cover mb-4 rounded-lg">
+          <h3 class="text-lg font-bold mb-2 text-custom-blue">Asus ROG Gaming Laptop</h3>
+          <p class="text-gray-700 mb-2">The Asus ROG Gaming Laptop is engineered for peak gaming performance. Featuring top-tier graphics, enhanced cooling, and a fast refresh rate, it’s built for intense gaming sessions. The ROG's stylish design and durable build make it a powerful machine for serious gamers.</p>
+          <p class="text-gray-900 font-bold mb-2">9500 DH</p>
+          <button class="bg-custom-cyan text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-custom-blue" onclick="addToCart(1)">Add to Cart</button>
+        </div>
+      
+        <!-- Product 2 -->
+        <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <img src="images/dell.png" alt="Product 2" class="w-full h-48 object-cover mb-4 rounded-lg">
+          <h3 class="text-lg font-bold mb-2 text-custom-blue">Dell XPS Laptop</h3>
+          <p class="text-gray-700 mb-2">The Dell XPS Laptop redefines premium performance with its stunning display, sleek design, and ultra-fast processing power. Ideal for professionals and creators, the XPS offers an immersive viewing experience and incredible multitasking capabilities, making it a perfect blend of beauty and performance.</p>
+          <p class="text-gray-900 font-bold mb-2">7000 DH</p>
+          <button class="bg-custom-cyan text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-custom-blue" onclick="addToCart(2)">Add to Cart</button>
+        </div>
+      
+        <!-- Product 3 -->
+        <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <img src="images/hp.png" alt="Product 3" class="w-full h-48 object-cover mb-4 rounded-lg">
+          <h3 class="text-lg font-bold mb-2 text-custom-blue">HP Omen Gaming Laptop</h3>
+          <p class="text-gray-700 mb-2">The HP Omen Gaming Laptop is built for serious gamers, featuring powerful hardware, customizable RGB lighting, and superior cooling technology. With cutting-edge graphics and a high-speed display, it ensures a seamless gaming experience for both casual and professional gamers alike.</p>
+          <p class="text-gray-900 font-bold mb-2">12000 DH</p>
+          <button class="bg-custom-cyan text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-custom-blue" onclick="addToCart(3)">Add to Cart</button>
+        </div>
+      
+        <!-- Product 4 -->
+        <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <img src="images/msi.png" alt="Product 4" class="w-full h-48 object-cover mb-4 rounded-lg">
+          <h3 class="text-lg font-bold mb-2 text-custom-blue">MSI Gaming Laptop</h3>
+          <p class="text-gray-700 mb-2">Experience powerful performance and immersive gaming with the MSI Gaming Laptop. Featuring high-end graphics, an advanced cooling system, and a sleek design, it’s built for serious gamers who demand the best.</p>
+          <p class="text-gray-900 font-bold mb-2">11500 DH</p>
+          <button class="bg-custom-cyan text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-custom-blue" onclick="addToCart(4)">Add to Cart</button>
+        </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-custom-blue text-white py-8 text-center">
+    <p>&copy; 2024 MR TECHNOLOGIES. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

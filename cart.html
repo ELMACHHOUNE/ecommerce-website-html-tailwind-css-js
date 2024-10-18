@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cart page for MR TECHNOLOGIES">
+  <title>Cart - My E-commerce Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <header class="bg-custom-blue shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-2xl font-bold text-white">MR TECHNOLOGIES</a>
+      <nav class="space-x-4">
+        <a href="index.html" class="text-white hover:text-custom-cyan">Home</a>
+        <a href="product.html" class="text-white hover:text-custom-cyan">Products</a>
+        <a href="cart.html" class="text-white hover:text-custom-cyan relative">
+          Cart
+          <span id="cart-count" class="absolute top-0 right-0 bg-red-600 text-white rounded-full px-1 text-xs"></span>
+        </a>
+        <a href="contact.html" class="text-white hover:text-custom-cyan">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Cart Section -->
+  <main class="flex-grow container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6 text-custom-blue">Your Cart</h1>
+
+    <div class="mt-8">
+        <div id="cart-items"></div>
+        <div class="flex justify-between items-center mt-8 p-4 bg-white rounded-lg shadow-md">
+            <div id="total" class="font-bold text-xl text-gray-700"></div>
+            <button id="checkout-button" class="bg-green-500 text-white p-3 rounded hover:bg-green-300 transition duration-300 ease-in-out" disabled>Checkout</button>
+        </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-custom-blue text-white py-8 text-center">
+    <p>&copy; 2024 MR TECHNOLOGIES. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

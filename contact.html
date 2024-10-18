@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+     <!-- Navbar -->
+  <header class="bg-custom-blue shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-2xl font-bold text-white">MR TECHNOLOGIES</a>
+      <nav class="space-x-4">
+        <a href="index.html" class="text-white hover:text-custom-cyan">Home</a>
+        <a href="product.html" class="text-white hover:text-custom-cyan">Products</a>
+        <a href="cart.html" class="text-white hover:text-custom-cyan relative">
+            Cart
+            <span id="cart-count" class="absolute top-0 right-0 bg-red-600 text-white rounded-full px-1 text-xs"></span>
+        </a>
+        <a href="contact.html" class="text-white hover:text-custom-cyan">Contact</a>
+      </nav>
+    </div>
+  </header>
+    <div class="flex-grow">
+        <!-- Contact Section -->
+        <div class="container mx-auto my-10 p-5 bg-white shadow-lg rounded-lg">
+            <h2 class="text-2xl font-semibold mb-5 text-center text-custom-blue">Contact Us</h2>
+            <form id="contact-form">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Name</label>
+                    <input type="text" id="name" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" id="email" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700">Message</label>
+                    <textarea id="message" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-custom-blue text-white p-2 rounded hover:bg-custom-cyan transition">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-custom-blue text-white text-center p-4">
+        <p>&copy; 2024 MR TECHNOLOGIES. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappMessage = `Hello, my name is ${name}. You can reach me at ${email}. Here is my message: ${message}`;
+            const phoneNumber = '+212649455082';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            // Redirect to WhatsApp
+            window.open(whatsappURL, '_blank');
+
+            // Clear form
+            document.getElementById('contact-form').reset();
+        });
+    </script>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
