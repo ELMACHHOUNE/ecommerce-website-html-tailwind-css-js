@@ -40,13 +40,14 @@ function addToCart(productId) {
   alert(`${product.name} has been added to your cart!`);
   updateCartDisplay(); // Update cart display
 }
-
-// Function to update the cart display
 function updateCartDisplay() {
   const cartItemsDiv = document.getElementById('cart-items');
   const totalElement = document.getElementById('total');
   const checkoutButton = document.getElementById('checkout-button');
-  const cartCountElement = document.getElementById('cart-count'); // Reference to the cart count
+  
+  // Get references to both desktop and mobile cart count elements
+  const cartCountElement = document.getElementById('cart-count');
+  const mobileCartCountElement = document.getElementById('mobile-cart-count');
 
   if (cartItemsDiv) {
     cartItemsDiv.innerHTML = '';
@@ -79,14 +80,36 @@ function updateCartDisplay() {
     totalElement.innerText = `Total: ${total} DH`;
   }
 
-  // Update cart count
-  cartCountElement.innerText = cart.reduce((sum, product) => sum + product.quantity, 0);
+  // Update both cart count elements
+  const cartCount = cart.reduce((sum, product) => sum + product.quantity, 0);
+  cartCountElement.innerText = cartCount;
+  mobileCartCountElement.innerText = cartCount;
 
   // Enable or disable checkout button
   if (checkoutButton) {
     checkoutButton.disabled = cart.length === 0;
   }
 }
+
+
+ // Handle form submission
+ document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  const whatsappMessage = `Hello, my name is ${name}. You can reach me at ${email}. Here is my message: ${message}`;
+  const phoneNumber = '+212649455082';
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Redirect to WhatsApp
+  window.open(whatsappURL, '_blank');
+
+  // Clear form
+  document.getElementById('contact-form').reset();
+});
 
 // Function to update product quantity
 function updateQuantity(productId, change) {

@@ -39,7 +39,7 @@
             <a href="product.html" class="block text-white py-2 hover:text-custom-cyan">Products</a>
             <a href="cart.html" class="block text-white py-2 hover:text-custom-cyan relative">
                 Cart
-                <span id="cart-count" class="absolute top-0 right-0 bg-red-600 text-white rounded-full px-1 text-xs"></span>
+                <span id="mobile-cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs"></span> <!-- Mobile cart count -->
             </a>
             <a href="contact.html" class="block text-white py-2 hover:text-custom-cyan">Contact</a>
         </nav>
@@ -71,34 +71,6 @@
     <footer class="bg-custom-blue text-white text-center p-4">
         <p>&copy; 2024 MR TECHNOLOGIES. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        // Handle mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Handle form submission
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            const whatsappMessage = `Hello, my name is ${name}. You can reach me at ${email}. Here is my message: ${message}`;
-            const phoneNumber = '+212649455082';
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-            // Redirect to WhatsApp
-            window.open(whatsappURL, '_blank');
-
-            // Clear form
-            document.getElementById('contact-form').reset();
-        });
-    </script>
 
     <script src="./js/script.js"></script>
 </body>
