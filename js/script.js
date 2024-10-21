@@ -92,25 +92,6 @@ function updateCartDisplay() {
 }
 
 
- // Handle form submission
- document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent default form submission
-
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-
-  const whatsappMessage = `Hello, my name is ${name}. You can reach me at ${email}. Here is my message: ${message}`;
-  const phoneNumber = '+212649455082';
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-  // Redirect to WhatsApp
-  window.open(whatsappURL, '_blank');
-
-  // Clear form
-  document.getElementById('contact-form').reset();
-});
-
 // Function to update product quantity
 function updateQuantity(productId, change) {
   const product = cart.find(item => item.id === productId);

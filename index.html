@@ -6,10 +6,9 @@
     <title>MR TECHNOLOGIES</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
-    <link href="css/tailwind.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
     <meta name="description" content="MR TECHNOLOGIES - Buy the best products online">
     <meta name="keywords" content="ecommerce, shop, products, online store">
-    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
     <!-- Navbar -->
@@ -28,7 +27,7 @@
                 <a href="product.html" class="text-white hover:text-custom-cyan">Products</a>
                 <a href="cart.html" class="text-white hover:text-custom-cyan relative">
                     Cart
-                    <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs"></span> <!-- Mobile cart count -->
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs"></span>
                 </a>
                 <a href="contact.html" class="text-white hover:text-custom-cyan">Contact</a>
             </nav>
@@ -42,45 +41,43 @@
             <a href="product.html" class="block text-white py-2 hover:text-custom-cyan">Products</a>
             <a href="cart.html" class="block text-white py-2 hover:text-custom-cyan relative">
                 Cart
-                <span id="mobile-cart-count" class="absolute top-0 right-0 bg-red-600 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs"></span> <!-- Mobile cart count -->
+                <span id="mobile-cart-count" class="absolute top-0 right-0 bg-red-600 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs"></span>
             </a>
             <a href="contact.html" class="block text-white py-2 hover:text-custom-cyan">Contact</a>
         </nav>
     </div>
-   
-   <!-- Cover Image Section -->
-   <section class="flex justify-center mt-6">
-       <img src="images/cover-e-com.png" alt="E-commerce Cover" class="w-full max-w-7xl rounded-lg shadow-lg">
-   </section>
-   
-   <!-- About Section -->
-   <main class="flex-grow container mx-auto py-12">
-       <h2 class="text-3xl font-bold mb-6 text-custom-blue">About Our Store</h2>
-       <p class="text-lg text-gray-700 mb-4">
-           Welcome to MR TECHNOLOGIES, your one-stop destination for quality products at affordable prices. We offer a range of products to suit your needs, from the latest electronics to fashionable accessories. Our mission is to provide an exceptional shopping experience through high-quality products and outstanding customer service. We believe in empowering our customers by offering great value and a diverse selection of items.
-       </p>
-       <h3 class="text-2xl font-bold mb-4 text-custom-blue">Connect with Us</h3>
-       <p class="text-lg text-gray-700 mb-4">
-           Follow us on our social media platforms to stay updated on our latest products, promotions, and news. We love to hear from our customers and appreciate your feedback!
-       </p>
-       <div class="flex space-x-4 mt-4">
-           <a href="https://www.facebook.com/m.elmachhoune" target="_blank" class="text-blue-600 hover:text-blue-800">
-               <img src="images/facebook.png" alt="Facebook" class="h-8 w-8">
-           </a>
-           <a href="https://www.instagram.com/mohamed.elmachhoune" target="_blank" class="text-pink-600 hover:text-pink-800">
-               <img src="images/instagram.png" alt="Instagram" class="h-8 w-8">
-           </a>
-           <a href="https://www.linkedin.com/in/mohamed-el-machhoune" target="_blank" class="text-blue-700 hover:text-blue-900">
-               <img src="images/linkedin.png" alt="LinkedIn" class="h-8 w-8">
-           </a>
-       </div>
-   </main>
 
-   <!-- Footer -->
-   <footer class="bg-custom-blue text-white py-8 text-center">
-       <p>&copy; 2024 MR TECHNOLOGIES. All rights reserved.</p>
-   </footer>
+    <!-- Hero Section -->
+    <section class="bg-gray-900 text-white">
+        <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+            <div class="mx-auto max-w-3xl text-center">
+                <img src="images/cover-e-com.png" alt="E-commerce Cover" class="w-full max-w-7xl rounded-lg shadow-lg mb-6">
+                <h1 class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-extrabold text-transparent sm:text-6xl">
+                    Understand User Flow.
+                    <span class="sm:block"> Increase Conversion. </span>
+                </h1>
+                <p class="mx-auto mt-4 max-w-xl text-lg sm:text-xl">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus numquam ea!
+                </p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a class="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-opacity-75 sm:w-auto" href="#">
+                        Get Started
+                    </a>
+                    <a class="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto" href="#">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-   <script src="js/script.js"></script>
+   
+
+    <!-- Footer -->
+    <footer class="bg-custom-blue text-white py-8 text-center">
+        <p>&copy; 2024 MR TECHNOLOGIES. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
