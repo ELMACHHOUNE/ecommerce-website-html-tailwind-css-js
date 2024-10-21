@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Asus ROG Gaming Laptop",
+    "price": 9500,
+    "image": "../images/asus.png"
+  },
+  {
+    "id": 2,
+    "name": "Dell XPS Laptop",
+    "price": 7000,
+    "image": "../images/dell.png"
+  },
+  {
+    "id": 3,
+    "name": "HP Omen Gaming Laptop",
+    "price": 12000,
+    "image": "../images/hp.png"
+  },
+  {
+    "id": 4,
+    "name": "MSI Gaming Laptop",
+    "price": 11500,
+    "image": "../images/msi.png"
+  }
+]

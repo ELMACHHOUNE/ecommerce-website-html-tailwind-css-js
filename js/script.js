@@ -1,21 +1,24 @@
+// Load the cart from localStorage or initialize it as an empty array
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Products array with image URLs
-const products = [
-  { id: 1, name: 'Asus ROG Gaming Laptop', price: 9500, image: '../images/asus.png' },
-  { id: 2, name: 'Dell XPS Laptop', price: 7000, image: '../images/dell.png' },
-  { id: 3, name: 'HP Omen Gaming Laptop', price: 12000, image: '../images/hp.png' },
-  { id: 4, name: 'MSI Gaming Laptop', price: 11500, image: '../images/msi.png' },
-];
+// Variable to store the products
+let products = [];
+
+// Fetch product data from data.json
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    products = data;
+    updateCartDisplay(); // Call updateCartDisplay after products are loaded
+  })
+  .catch(error => console.error('Error loading product data:', error));
 
 // Handle mobile menu toggle
 const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+  mobileMenu.classList.toggle('hidden');
 });
-
-
 
 // Function to add a product to the cart
 function addToCart(productId) {
