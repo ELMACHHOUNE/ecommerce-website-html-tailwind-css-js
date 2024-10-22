@@ -14,5 +14,36 @@
     color: #f7fafc; /* Light gray for better contrast on the navy background */
 }
 .hover\:bg-custom-cyan:hover {
-    background-color: #00d6ff;
+    background-color: #0b7dda;
 }
+.bg-button-blue{
+    background-color: #074f8b ;
+}
+
+
+/* Ensure the alert is centered and has good spacing */
+#alert-container {
+    width: 90%; /* Make it 90% width on mobile */
+    max-width: 400px; /* Limit max width for larger screens */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust positioning */
+  }
+  
+  .alert {
+    padding: 16px; /* Add padding */
+  }
+  
+  /* Responsive adjustments for the alert text */
+  .alert strong {
+    font-size: 1rem; /* Base size for mobile */
+  }
+  
+  .alert p {
+    font-size: 0.875rem; /* Smaller font size for mobile */
+  }
+  
+  /* Adjust the button for better accessibility */
+  .alert button {
+    padding: 8px; /* Button padding */
+  }
+  

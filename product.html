@@ -49,50 +49,80 @@
     </nav>
   </div>
 
-  <!-- Product Listing -->
-  <main class="flex-grow container mx-auto py-12">
-    <h2 class="text-3xl font-bold mb-8 text-custom-blue">Our Products</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Product Cards -->
-      <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-        <img src="images/asus.png" alt="Asus ROG Gaming Laptop" class="w-full h-48 object-cover mb-4 rounded-lg">
-        <h3 class="text-lg font-bold mb-2 text-custom-blue">Asus ROG Gaming Laptop</h3>
-        <p class="text-gray-700 mb-2">The Asus ROG Gaming Laptop is engineered for peak gaming performance...</p>
-        <p class="text-gray-900 font-bold mb-2">9500 DH</p>
-        <button class="bg-custom-cyan text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-custom-blue"
-          onclick="addToCart(1)">Add to Cart</button>
-      </div>
+<!-- Product Listing -->
+<main class="flex-grow container mx-auto py-12">
+  <span class="flex items-center m-6 p-6">
+    <span class="h-px flex-1 bg-black"></span>
+    <span class="shrink-0 px-6 text-2xl">Our Products</span>
+    <span class="h-px flex-1 bg-black"></span>
+  </span>
 
-      <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-        <img src="images/dell.png" alt="Dell XPS Laptop" class="w-full h-48 object-cover mb-4 rounded-lg">
-        <h3 class="text-lg font-bold mb-2 text-custom-blue">Dell XPS Laptop</h3>
-        <p class="text-gray-700 mb-2">The Dell XPS Laptop redefines premium performance with its stunning display...</p>
-        <p class="text-gray-900 font-bold mb-2">7000 DH</p>
-        <button class="bg-custom-cyan text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-custom-blue"
-          onclick="addToCart(2)">Add to Cart</button>
-      </div>
-
-      <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-        <img src="images/hp.png" alt="HP Omen Gaming Laptop" class="w-full h-48 object-cover mb-4 rounded-lg">
-        <h3 class="text-lg font-bold mb-2 text-custom-blue">HP Omen Gaming Laptop</h3>
-        <p class="text-gray-700 mb-2">The HP Omen Gaming Laptop is built for serious gamers...</p>
-        <p class="text-gray-900 font-bold mb-2">12000 DH</p>
-        <button class="bg-custom-cyan text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-custom-blue"
-          onclick="addToCart(3)">Add to Cart</button>
-      </div>
-
-      <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-        <img src="images/msi.png" alt="MSI Gaming Laptop" class="w-full h-48 object-cover mb-4 rounded-lg">
-        <h3 class="text-lg font-bold mb-2 text-custom-blue">MSI Gaming Laptop</h3>
-        <p class="text-gray-700 mb-2">Experience powerful performance and immersive gaming with the MSI Gaming Laptop...</p>
-        <p class="text-gray-900 font-bold mb-2">11500 DH</p>
-        <button class="bg-custom-cyan text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-custom-blue"
-          onclick="addToCart(4)">Add to Cart</button>
-      </div> 
-      
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Product Cards -->
+    <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+      <a class="group block">
+        <img src="images/asus.png" alt="Asus ROG Gaming Laptop" class="h-64 w-full object-cover rounded-lg">
+        <div class="mt-3 flex flex-col h-full">
+          <h3 class="text-gray-900 group-hover:underline group-hover:underline-offset-4 text-lg font-bold">Asus ROG Gaming Laptop</h3>
+          <p class="mt-1.5 text-gray-500 text-sm flex-grow p-3">The Asus ROG Gaming Laptop is engineered for peak gaming performance...</p>
+          <div class="flex justify-between items-center">
+            <p class="text-gray-900 text-lg font-bold">9500 DH</p>
+            <button class="bg-button-blue text-white py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-custom-cyan" onclick="addToCart(1)">Add to Cart</button>
+          </div>
+        </div>
+      </a>
     </div>
-  </main>
+
+    <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+      <a class="group block">
+        <img src="images/dell.png" alt="Dell XPS Laptop" class="h-64 w-full object-cover rounded-lg">
+        <div class="mt-3 flex flex-col h-full">
+          <h3 class="text-gray-900 group-hover:underline group-hover:underline-offset-4 text-lg font-bold">Dell XPS Laptop</h3>
+          <p class="mt-1.5 text-gray-500 text-sm flex-grow p-3">The Dell XPS Laptop redefines premium performance with its stunning display...</p>
+          <div class="flex justify-between items-center">
+            <p class="text-gray-900 text-lg font-bold">7000 DH</p>
+            <button class="bg-button-blue text-white py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-custom-cyan" onclick="addToCart(2)">Add to Cart</button>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+      <a class="group block">
+        <img src="images/hp.png" alt="HP Omen Gaming Laptop" class="h-64 w-full object-cover rounded-lg">
+        <div class="mt-3 flex flex-col h-full">
+          <h3 class="text-gray-900 group-hover:underline group-hover:underline-offset-4 text-lg font-bold">HP Omen Gaming Laptop</h3>
+          <p class="mt-1.5 text-gray-500 text-sm flex-grow p-3">The HP Omen Gaming Laptop is built for serious gamers...</p>
+          <div class="flex justify-between items-center">
+            <p class="text-gray-900 text-lg font-bold ">12000 DH</p>
+            <button class="bg-button-blue text-white py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-custom-cyan" onclick="addToCart(3)">Add to Cart</button>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="border p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+      <a class="group block">
+        <img src="images/msi.png" alt="MSI Gaming Laptop" class="h-64 w-full object-cover rounded-lg">
+        <div class="mt-3 flex flex-col h-full">
+          <h3 class="text-gray-900 group-hover:underline group-hover:underline-offset-4 text-lg font-bold">MSI Gaming Laptop</h3>
+          <p class="mt-1.5 text-gray-500 text-sm flex-grow p-3">Experience powerful performance and immersive gaming with the MSI Gaming Laptop...</p>
+          <div class="flex justify-between items-center">
+            <p class="text-gray-900 text-lg font-bold ">11500 DH</p>
+            <button class="bg-button-blue text-white py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-custom-cyan" onclick="addToCart(4)">Add to Cart</button>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+  </div> 
+</main>
+
+
+
+
+
 
 
 

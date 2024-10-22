@@ -47,8 +47,11 @@
 </div>
 
 <main class="flex-grow container mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    <h1 class="text-4xl font-extrabold mb-8 text-custom-blue text-center">Your Cart</h1>
-  
+  <span class="flex items-center m-6 p-6">
+    <span class="h-px flex-1 bg-black"></span>
+    <span class="shrink-0 px-6 text-2xl">Your Cart</span> <!-- Change to text-2xl -->
+    <span class="h-px flex-1 bg-black"></span>
+  </span>
   <!-- Empty Cart Message -->
     <div id="empty-cart" class="hidden text-center">
         <img src="images/cartempty.png" alt="Empty Cart" class="mx-auto mb-4 h-54 md:h-54"> 
@@ -63,7 +66,7 @@
   
       <div class="flex justify-between items-center mt-8 p-4 border-t border-gray-200">
         <div id="total" class="font-bold text-2xl text-gray-700"></div>
-        <button id="checkout-button" class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-500 transition duration-300 ease-in-out focus:outline-none" disabled>Checkout</button>
+        <button id="checkout-button" class="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-500 transition duration-300 ease-in-out focus:outline-none" disabled>Checkout</button>
       </div>
     </div>
   </main>

@@ -25,7 +25,7 @@ function showAlert(message) {
 
   // Create the alert HTML structure
   const alertHTML = `
-    <div role="alert" class="rounded-xl border border-gray-100 bg-white p-4 shadow-lg">
+    <div role="alert" class="alert rounded-xl border border-gray-100 bg-white p-4 shadow-lg">
       <div class="flex items-start gap-4">
         <span class="text-green-600">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -54,6 +54,7 @@ function showAlert(message) {
     dismissAlert(alertContainer.querySelector('button')); // dismiss alert after timeout
   }, 3000);
 }
+
 
 function dismissAlert(button) {
   button.closest('div[role="alert"]').remove();
@@ -123,9 +124,9 @@ function updateCartDisplay() {
             <div>
               <span class="font-bold">${product.name}</span>
               <div class="flex items-center space-x-2 mt-1">
-                <button onclick="updateQuantity(${product.id}, -1)" class="text-gray-500 bg-gray-200 p-2 rounded hover:bg-gray-300 transition duration-300 ease-in-out">-</button>
+                <button onclick="updateQuantity(${product.id}, -1)" class="text-gray-500 bg-gray-100 p-2 rounded hover:bg-gray-300 transition duration-300 ease-in-out">-</button>
                 <span class="font-semibold">${product.quantity}</span>
-                <button onclick="updateQuantity(${product.id}, 1)" class="text-gray-500 bg-gray-200 p-2 rounded hover:bg-gray-300 transition duration-300 ease-in-out">+</button>
+                <button onclick="updateQuantity(${product.id}, 1)" class="text-gray-500 bg-gray-100 p-2 rounded hover:bg-gray-300 transition duration-300 ease-in-out">+</button>
               </div>
             </div>
           </div>
