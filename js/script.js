@@ -20,26 +20,76 @@ menuToggle.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
-// Function to add a product to the cart
+function showAlert(message) {
+  const alertContainer = document.getElementById("alert-container");
+
+  // Create the alert HTML structure
+  const alertHTML = `
+    <div role="alert" class="rounded-xl border border-gray-100 bg-white p-4 shadow-lg">
+      <div class="flex items-start gap-4">
+        <span class="text-green-600">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </span>
+        <div class="flex-1">
+          <strong class="block font-medium text-gray-900">Success</strong>
+          <p class="mt-1 text-sm text-gray-700">${message}</p>
+        </div>
+        <button class="text-gray-500 transition hover:text-gray-600" onclick="dismissAlert(this)">
+          <span class="sr-only">Dismiss popup</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  `;
+
+  // Append the alert to the container
+  alertContainer.innerHTML = alertHTML;
+
+  // Automatically remove the alert after 3 seconds
+  setTimeout(() => {
+    dismissAlert(alertContainer.querySelector('button')); // dismiss alert after timeout
+  }, 3000);
+}
+
+function dismissAlert(button) {
+  button.closest('div[role="alert"]').remove();
+}
+
+
+
 function addToCart(productId) {
+  // Find the product by its ID
   const product = products.find(p => p.id === productId);
 
+  // Check if the product exists
   if (!product) {
-    alert("Product not found.");
+    showAlert("Product not found."); // Show alert if product is not found
     return;
   }
 
+  // Check if the product is already in the cart
   const existingProduct = cart.find(item => item.id === productId);
   if (existingProduct) {
     existingProduct.quantity += 1; // Increase quantity if already in cart
   } else {
-    cart.push({ ...product, quantity: 1 }); // Add product with quantity
+    // Add product with quantity
+    cart.push({ ...product, quantity: 1 });
   }
 
-  localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to local storage
-  alert(`${product.name} has been added to your cart!`);
-  updateCartDisplay(); // Update cart display
+  // Save cart to local storage
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Show success alert
+  showAlert(`${product.name} has been added to your cart!`);
+  
+  // Update cart display
+  updateCartDisplay(); 
 }
+
 function updateCartDisplay() {
   const cartItemsDiv = document.getElementById('cart-items');
   const totalElement = document.getElementById('total');
