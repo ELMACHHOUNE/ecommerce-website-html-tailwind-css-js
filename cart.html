@@ -32,6 +32,7 @@
         </nav>
     </div>
 </header>
+
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="hidden lg:hidden">
     <nav class="bg-custom-blue p-4">
@@ -39,30 +40,40 @@
         <a href="product.html" class="block text-white py-2 hover:text-custom-cyan">Products</a>
         <a href="cart.html" class="block text-white py-2 hover:text-custom-cyan relative">
             Cart
-            <span id="mobile-cart-count" class="absolute top-0 right-0 bg-red-600 text-white rounded-full px-1 text-xs"></span> <!-- Mobile cart count -->
+            <span id="mobile-cart-count" class="absolute top-0 right-0 bg-red-600 text-white rounded-full px-1 text-xs"></span>
         </a>
         <a href="contact.html" class="block text-white py-2 hover:text-custom-cyan">Contact</a>
     </nav>
 </div>
 
-  <!-- Cart Section -->
-  <main class="flex-grow container mx-auto py-12">
-    <h1 class="text-3xl font-bold mb-6 text-custom-blue">Your Cart</h1>
-
-    <div class="mt-8">
-        <div id="cart-items"></div>
-        <div class="flex justify-between items-center mt-8 p-4 bg-white rounded-lg shadow-md">
-            <div id="total" class="font-bold text-xl text-gray-700"></div>
-            <button id="checkout-button" class="bg-green-500 text-white p-3 rounded hover:bg-green-300 transition duration-300 ease-in-out" disabled>Checkout</button>
-        </div>
+<main class="flex-grow container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <h1 class="text-4xl font-extrabold mb-8 text-custom-blue text-center">Your Cart</h1>
+  
+  <!-- Empty Cart Message -->
+    <div id="empty-cart" class="hidden text-center">
+        <img src="images/cartempty.png" alt="Empty Cart" class="mx-auto mb-4 h-54 md:h-54"> 
+    </div>
+  
+  
+    <div class="relative w-full max-w-4xl border border-gray-300 bg-white rounded-lg shadow-lg p-6">
+  
+      <div class="mt-4 space-y-6" id="cart-items">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+  
+      <div class="flex justify-between items-center mt-8 p-4 border-t border-gray-200">
+        <div id="total" class="font-bold text-2xl text-gray-700"></div>
+        <button id="checkout-button" class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-500 transition duration-300 ease-in-out focus:outline-none" disabled>Checkout</button>
+      </div>
     </div>
   </main>
+  
 
-  <!-- Footer -->
-  <footer class="bg-custom-blue text-white py-8 text-center">
-    <p>&copy; 2024 MR TECHNOLOGIES. All rights reserved.</p>
-  </footer>
+<!-- Footer -->
+<footer class="bg-custom-blue text-white py-8 text-center">
+  <p>&copy; 2024 MR TECHNOLOGIES. All rights reserved.</p>
+</footer>
 
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

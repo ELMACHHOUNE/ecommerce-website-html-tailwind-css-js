@@ -59,8 +59,7 @@ function dismissAlert(button) {
   button.closest('div[role="alert"]').remove();
 }
 
-
-
+// Function to add to cart
 function addToCart(productId) {
   // Find the product by its ID
   const product = products.find(p => p.id === productId);
@@ -85,7 +84,7 @@ function addToCart(productId) {
 
   // Show success alert
   showAlert(`${product.name} has been added to your cart!`);
-  
+
   // Update cart display
   updateCartDisplay(); 
 }
@@ -94,7 +93,9 @@ function updateCartDisplay() {
   const cartItemsDiv = document.getElementById('cart-items');
   const totalElement = document.getElementById('total');
   const checkoutButton = document.getElementById('checkout-button');
-  
+  const emptyCartDiv = document.getElementById('empty-cart'); // Reference to the empty cart message
+  const cartContainer = document.querySelector('.relative.w-full.max-w-4xl'); // Reference to the cart items container
+
   // Get references to both desktop and mobile cart count elements
   const cartCountElement = document.getElementById('cart-count');
   const mobileCartCountElement = document.getElementById('mobile-cart-count');
@@ -103,31 +104,46 @@ function updateCartDisplay() {
     cartItemsDiv.innerHTML = '';
     let total = 0;
 
-    cart.forEach(product => {
-      const item = document.createElement('div');
-      item.className = 'flex justify-between items-center bg-white p-4 rounded-lg shadow-md mb-2';
-      item.innerHTML = `
-        <div class="flex items-center">
-          <img src="${product.image}" alt="${product.name}" class="w-16 h-16 object-cover rounded-lg mr-4">
-          <div>
-            <span class="font-bold">${product.name}</span>
-            <div class="flex items-center space-x-2 mt-1">
-              <button onclick="updateQuantity(${product.id}, -1)" class="text-gray-500 bg-gray-200 p-2 rounded">  -  </button>
-              <span>${product.quantity}</span>
-              <button onclick="updateQuantity(${product.id}, 1)" class="text-gray-500 bg-gray-200 p-2 rounded">+</button>
+    if (cart.length === 0) {
+      // Show the empty cart message if there are no items
+      emptyCartDiv.classList.remove('hidden');
+      cartContainer.classList.add('hidden'); // Hide the cart items container
+      totalElement.innerText = 'Total: 0 DH'; // Reset total to 0 when cart is empty
+    } else {
+      // Hide the empty cart message if there are items
+      emptyCartDiv.classList.add('hidden');
+      cartContainer.classList.remove('hidden'); // Show the cart items container
+
+      cart.forEach(product => {
+        const item = document.createElement('div');
+        item.className = 'flex justify-between items-center bg-white p-4 rounded-lg shadow-md mb-2';
+        item.innerHTML = `
+          <div class="flex items-center">
+            <img src="${product.image}" alt="${product.name}" class="w-16 h-16 object-cover rounded-lg mr-4">
+            <div>
+              <span class="font-bold">${product.name}</span>
+              <div class="flex items-center space-x-2 mt-1">
+                <button onclick="updateQuantity(${product.id}, -1)" class="text-gray-500 bg-gray-200 p-2 rounded hover:bg-gray-300 transition duration-300 ease-in-out">-</button>
+                <span class="font-semibold">${product.quantity}</span>
+                <button onclick="updateQuantity(${product.id}, 1)" class="text-gray-500 bg-gray-200 p-2 rounded hover:bg-gray-300 transition duration-300 ease-in-out">+</button>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="flex items-center space-x-2">
-          <span class="font-bold">${product.price * product.quantity} DH</span>
-          <button onclick="removeFromCart(${product.id})" class="text-red-600 bg-red-100 p-2 rounded hover:bg-red-400 transition duration-300 ease-in-out">Delete</button>
-        </div>
-      `;
-      cartItemsDiv.appendChild(item);
-      total += product.price * product.quantity;
-    });
+          <div class="flex items-center space-x-2">
+            <span class="font-bold">${product.price * product.quantity} DH</span>
+            <button onclick="removeFromCart(${product.id})" class="flex items-center justify-center text-red-600 hover:bg-red-100 transition duration-300 ease-in-out p-2 rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        `;
+        cartItemsDiv.appendChild(item);
+        total += product.price * product.quantity;
+      });
 
-    totalElement.innerText = `Total: ${total} DH`;
+      totalElement.innerText = `Total: ${total} DH`; // Update total
+    }
   }
 
   // Update both cart count elements
@@ -140,7 +156,6 @@ function updateCartDisplay() {
     checkoutButton.disabled = cart.length === 0;
   }
 }
-
 
 // Function to update product quantity
 function updateQuantity(productId, change) {
@@ -179,6 +194,13 @@ function checkout() {
 
   // Redirect to WhatsApp
   window.open(whatsappURL, '_blank');
+
+  // Clear the cart
+  cart = [];
+  localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in local storage
+
+  // Update the cart display
+  updateCartDisplay();
 }
 
 // Call this function on page load to display cart items
