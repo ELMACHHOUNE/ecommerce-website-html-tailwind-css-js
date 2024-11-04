@@ -1,25 +1,11 @@
 {
-    "routes": [
-      {
-        "src": "/404",
-        "dest": "/error.html" 
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/$1"  
-      }
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/$1" },
+      { "source": "/404", "destination": "/error.html" } 
     ],
-    "cleanUrls": true,
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=0, s-maxage=3600"
-          }
-        ]
-      }
-    ]
+    "cleanUrls": true, 
+    "fallbacks": {
+      "html": "/error.html" 
+    }
   }
   
