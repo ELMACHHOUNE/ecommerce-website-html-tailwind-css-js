@@ -1,11 +1,10 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/$1" },
-      { "source": "/404", "destination": "/error.html" } 
-    ],
-    "cleanUrls": true, 
-    "fallbacks": {
-      "html": "/error.html" 
-    }
+  "rewrites": [
+    { "source": "/404", "destination": "/error.html" },
+    { "source": "/(.*)", "destination": "/$1" } 
+  ],
+  "cleanUrls": true, 
+  "fallbacks": {
+    "html": "/error.html"
   }
-  
+}
