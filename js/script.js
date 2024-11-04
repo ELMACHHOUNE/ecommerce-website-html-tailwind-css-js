@@ -253,3 +253,9 @@ function scrollToTop() {
     behavior: "smooth"
   });
 }
+
+window.addEventListener('error', (event) => {
+  if (event.target.tagName === 'IMG' || event.target.tagName === 'SCRIPT') {
+      window.location.href = 'error.html';
+  }
+}, true);

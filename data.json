@@ -22,5 +22,11 @@
     "name": "MSI Gaming Laptop",
     "price": 11500,
     "image": "../images/msi.png"
+  },
+  {
+    "id": 5,
+    "name": "LENOVO LEGION 5",
+    "price": 9500,
+    "image": "../images/lenovo.webp"
   }
 ]
