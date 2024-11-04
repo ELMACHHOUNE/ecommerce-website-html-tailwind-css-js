@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "rewrites": [
       { "source": "/404", "destination": "/error.html" },
       { "source": "/(.*)", "destination": "/$1" }
@@ -7,5 +8,14 @@
     "fallbacks": {
       "html": "/error.html"
     }
+=======
+  "rewrites": [
+    { "source": "/404", "destination": "/error.html" },
+    { "source": "/(.*)", "destination": "/$1" } 
+  ],
+  "cleanUrls": true, 
+  "fallbacks": {
+    "html": "/error.html"
+>>>>>>> 06cc8376e188c9215ac2d500472a2d7646ae02ed
   }
-  
+}
