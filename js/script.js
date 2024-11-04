@@ -254,18 +254,3 @@ function scrollToTop() {
   });
 }
 
-// Simple JS fallback to redirect on a 404 error for certain links
-document.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', function (event) {
-      fetch(link.href, { method: 'HEAD' })
-          .then(response => {
-              if (!response.ok) {
-                  window.location.href = 'error.html';
-              }
-          })
-          .catch(() => {
-              window.location.href = 'error.html';
-          });
-      event.preventDefault();
-  });
-});
