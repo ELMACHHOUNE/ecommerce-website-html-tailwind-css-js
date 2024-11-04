@@ -235,3 +235,21 @@ function sendMessage() {
   // Show a success alert
   showAlert('Your message has been sent successfully!');
 }
+
+ // Show or Hide the Scroll-to-Top Button
+ window.onscroll = function() {
+  const scrollUpBtn = document.getElementById("scrollUpBtn");
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollUpBtn.classList.remove("hidden");
+  } else {
+    scrollUpBtn.classList.add("hidden");
+  }
+};
+
+// Smooth Scroll to Top
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
