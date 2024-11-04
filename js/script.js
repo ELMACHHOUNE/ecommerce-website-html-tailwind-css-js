@@ -209,3 +209,29 @@ updateCartDisplay();
 if (document.getElementById('checkout-button')) {
   document.getElementById('checkout-button').addEventListener('click', checkout);
 }
+
+function sendMessage() {
+  // Get input values from the contact form
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  // Check if any field is empty
+  if (!name || !email || !message) {
+    showAlert('Please fill in all fields before sending the message.');
+    return;
+  }
+
+  // Compose the WhatsApp message
+  const whatsappMessage = `Hello! I am ${name}.\n\nEmail: ${email}\n\nMessage: ${message}`;
+
+  // Specify the WhatsApp number
+  const phoneNumber = '+212649455082';
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Open WhatsApp with the composed message
+  window.open(whatsappURL, '_blank');
+
+  // Show a success alert
+  showAlert('Your message has been sent successfully!');
+}
